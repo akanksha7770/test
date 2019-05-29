@@ -13,17 +13,18 @@
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_field :date %>
+    <%= form.date_field :date, :rows => 3, :required => true %>
+    
   </div>
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.number_field :category_id %>
+    <%= form.number_field :category_id, :rows => 3, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, :rows => 3, :required => true %>
   </div>
 
   <div class="actions">
