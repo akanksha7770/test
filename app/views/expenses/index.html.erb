@@ -26,6 +26,13 @@
   </tbody>
 </table>
 
+<%= form_for :date , url: filter_path , method: :post do |f| %>
+  From Date: <%= f.date_field :start_date %><br />
+  Till Date : <%= f.date_field :end_date %><br />
+ 
+  <%= f.submit %>
+  
+  <%end%>
 <br>
 
 <%= link_to 'New Expense', new_expense_path %>
