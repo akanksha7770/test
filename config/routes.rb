@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 root 'expenses#index'
-resources :expenses do
+resources :expenses 
+	resources :filter
 
-end
+
 
    # get 'routines/index'
    # get 'routines/edit'

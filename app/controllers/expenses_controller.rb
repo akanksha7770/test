@@ -7,9 +7,10 @@ class ExpensesController < InheritedResources::Base
 
 
 def filter
-	
-	a=params[:date][:start_date]
-	xc=params[:date][:end_date] 
+	start_date=params[:date][:start_date]
+	end_date=params[:date][:end_date] 
+	@total_sum= Expense.where(date:"start_date".."end_date").sum(:price)
+	redirect_to expense_filters_path
 
 end
 
@@ -17,7 +18,7 @@ end
 def create
     @expense = Expense.new(expense_params)
     if @expense.save
-      redirect_to expense_path, notice: 'Expense Created Successfully.'
+      redirect_to expenses_path, notice: 'Expense Created Successfully.'
     else
       render 'new'
     end
@@ -25,7 +26,7 @@ def create
   private
 
     def expense_params
-      params.require(:expense).permit(:start_date, :end_date, :category_id, :price)
+      params.require(:expense).permit(:date, :category_id, :price)
     end
 
 end
