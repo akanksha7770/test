@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 root 'expenses#index'
 resources :expenses 
-	resources :filter
+resources :filter
 
 
 
