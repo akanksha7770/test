@@ -12,7 +12,4 @@ permit_params :date, :category_id, :price
 #   permitted
 # end
 
-
-
-
 end
